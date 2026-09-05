@@ -29,11 +29,11 @@ module MyConfig implements DataFlow::ConfigSig {
     )
   }
 
-  /*predicate isBarrier(DataFlow::Node barrier) {
+  predicate isBarrier(DataFlow::Node barrier) {
     exists(IfStmt ifs |
       barrier.asExpr().getBasicBlock() = ifs
     )
-  }*/
+  }
 }
 
 module MyTaint = TaintTracking::Global<MyConfig>;
